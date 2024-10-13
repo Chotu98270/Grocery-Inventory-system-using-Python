@@ -1,0 +1,45 @@
+# grocery items program
+
+# Initialize an empty grocery list
+grocery_list = []
+
+# Function to display the menu
+def display_menu():
+    print("\nGrocery List Menu")
+    print("1. Add Grocery Item")
+    print("2. List Grocery Items")
+    print("3. Exit")
+
+# Function to add grocery item to the list
+def add_grocery_item():
+    item = input("Enter the grocery item to add: ")
+    grocery_list.append(item)
+    print(f"'{item}' has been added to your grocery list.")
+
+# Function to list all grocery items
+def list_grocery_items():
+    if not grocery_list:
+        print("Your grocery list is empty.")
+    else:
+        print("\nYour Grocery List:")
+        for i, item in enumerate(grocery_list, start=1):
+            print(f"{i}. {item}")
+
+# Main program loop
+def main():
+    while True:
+        display_menu()
+        choice = input("Choose an option (1/2/3): ")
+
+        if choice == '1':
+            add_grocery_item()
+        elif choice == '2':
+            list_grocery_items()
+        elif choice == '3':
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please choose 1, 2, or 3.")
+
+if __name__ == "__main__":
+    main()
